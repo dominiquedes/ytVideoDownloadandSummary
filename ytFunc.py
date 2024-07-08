@@ -5,21 +5,21 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
-CREDS_FILE = r'C:\Users\domin\python-projects\credentials.json'
+CREDS_FILE = r'path to credentials file'
 creds = Credentials.from_service_account_file(CREDS_FILE, scopes=SCOPES)
 client = gspread.authorize(creds)
-sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1Gte1GiYPhLlvJVtfkj48JkMDUreEBw7yj96JrFSKqCg/edit?gid=0#gid=0").sheet1
+sheet = client.open_by_url("google sheet url").sheet1
 
 load_dotenv()
 
-genai.configure(api_key="AIzaSyAcu3YCl0UpFGtfGupXtmTtsae2uFI9w2A")
+genai.configure(api_key="google gemini ai apikey")
 
 model = genai.GenerativeModel('gemini-1.5-flash')
 
 
 
 user_link = input("YouTube Link: ")
-directory = r"C:\Users\domin\OneDrive\Desktop"
+directory = r"directory for yt download"
 
 
 print("Getting video...")
